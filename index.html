@@ -666,6 +666,8 @@
             padding: 0;
             background-color: #f8c4fd;
             overflow: hidden;
+            touch-action: manipulation;
+            /* Evita zoom en móviles */
         }
 
         *,
@@ -689,12 +691,24 @@
         }
 
         .mensaje {
-            color: black;
-            top: 20vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            padding: 15px;
+            margin: 0 auto 5vh;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .mensaje h1 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .mensaje span {
+            font-size: 1rem;
+            line-height: 1.4;
         }
 
         /* Añade estos nuevos estilos */
@@ -756,6 +770,7 @@
 
 <body>
     <div class="clickable-area" id="surpriseTrigger" style="height: 100vh; width: 100vw;">
+
         <div class="gato">
             <div class="all-wrap">
                 <div class="all">
@@ -899,7 +914,7 @@
                 <strong>¡Feliz Día de la Amistad Anyi! 💖</strong>
             </span>
         </div>
-        
+
         <script>
             document.getElementById('surpriseTrigger').addEventListener('click', function () {
                 // Efecto visual antes de redirigir
